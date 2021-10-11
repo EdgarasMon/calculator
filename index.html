@@ -1,0 +1,39 @@
+<!DOCTYdivE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>        
+<body>
+<h3>Calculator</h3>
+
+<div id="container">
+    <div id="result">142352</div>
+    <div id="current-value">12</div>
+    <div class="inner-container">
+        <input type="button" value="1" class="number-button" onclick="CreateCurrentInput()">
+        <input type="button" value="2" class="number-button" onclick="CreateCurrentInput()">
+        <input type="button" value="3" class="number-button" onclick="CreateCurrentInput()">
+        <input type="button" value="+" class="number-button" onclick="Add()">
+    </div>
+    <div class="inner-container">
+        <input id="4" type="button" value="4" class="number-button" onclick="CreateCurrentInput()">
+        <input id="5" type="button" value="5" class="number-button" onclick="CreateCurrentInput()">
+        <input id="6" type="button" value="6" class="number-button" onclick="CreateCurrentInput()">
+        <input value="-" >
+    </div> 
+    <div class="inner-container">
+        <input id="7" type="button" value="7" class="number-button" onclick="CreateCurrentInput()">
+        <input id="8" type="button" value="8" class="number-button" onclick="CreateCurrentInput()">
+        <input id="9" type="button" value="9" class="number-button" onclick="CreateCurrentInput()">
+        <input value="*" >
+    </div>
+    <div class="inner-container">
+        <input value="." >
+        <input id="0" type="button" value="0" class="number-button" onclick="CreateCurrentInput()">
+        <input value="=" >
+        <input value="/" >
+    </div>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

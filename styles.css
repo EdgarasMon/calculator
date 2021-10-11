@@ -1,0 +1,26 @@
+ #container {
+    border: 0.5vh solid black;
+    display:table;
+    height: 50vh;
+    width: 50vw;
+    
+ }
+
+ div.inner-container {    
+    display: table-row;
+    text-align: center;
+ }
+
+ p {
+    display: table-cell;
+    border: 0.25vh solid black;
+    text-align: center;
+
+ }
+
+.result {
+    display: block;
+    height: 10vh;
+    text-align: center;
+    
+ }
