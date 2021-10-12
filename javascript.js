@@ -1,19 +1,35 @@
-let result = document.querySelector('#result');
-let number_buttons = document.querySelectorAll('.number-button');
-let current_val = "";
-let full_number = "";
+//let result = document.querySelector('#result');
+//let number_buttons = document.querySelectorAll('.number-button');
+let previous_number = "";
+let current_number = "";
+let operator = '';
 
+// concatinates currently inputed numbers
  function CreateCurrentInput() {
     let input = event.target.value;
-    current_val += input; 
-    console.log("current_val ",current_val);
+    current_number += input; 
+}
+
+function SetPreviousNumber() {
+    previous_number = current_number;   
 }
 
 function ResetCurrentInput() {
-    console.log("ResetCurrentInput")
+    current_number = '';
 }
 
- function Add() {
-    console.log("Adding");
+function Add() {
+    SetPreviousNumber();
     ResetCurrentInput();
+    operator='toAdd';
  }
+
+ function CountResult() {
+    var res = 0;
+    if (operator == 'toAdd') {
+       res = parseInt(previous_number) + parseInt(current_number);
+    }
+    console.log("res  ", res);
+}
+
+ 
