@@ -1,5 +1,5 @@
-//let result = document.querySelector('#result');
-//let number_buttons = document.querySelectorAll('.number-button');
+let current_number_el = document.querySelector('#current_number');
+let result_el = document.querySelector('#result');
 let previous_number = 0;
 let current_number = 0;
 let isNumberFirst = true;
@@ -11,6 +11,8 @@ let operator = '';
     current_number == 0 ? current_number += parseInt(input) : current_number += input;    
     console.log("previous_number ", previous_number); 
     console.log("current_number ", current_number);
+
+    current_number_el.innerText = current_number;
 }
 
 function AddToPreviousNumber() {
