@@ -5,14 +5,18 @@ let current_number = 0;
 let isNumberFirst = true;
 let operator = '';
 
+let playSound = () => new Audio("https://www.soundjay.com/buttons/sounds/button-11.mp3").play()
+let playSound2 = () => new Audio("https://www.soundjay.com/buttons/sounds/button-13.mp3").play()
+let playSound3 = () => new Audio("https://www.soundjay.com/buttons/sounds/button-12.mp3").play()
+
+
  function CreateCurrentInput() {
     let input = event.target.value;
     // concatinates currently inputed numbers
     current_number == 0 ? current_number += parseInt(input) : current_number += input;    
     console.log("previous_number ", previous_number); 
     console.log("current_number ", current_number);
-
-    current_number_el.innerText = current_number;
+    current_number_el.innerText = current_number;    
 }
 
 function AddToPreviousNumber() {
@@ -118,4 +122,5 @@ function DoPreviousOperation() {
 function CountResult() {
     DoPreviousOperation();
     console.log("result = ", previous_number);
+    result_el.innerText = previous_number;
 }
