@@ -4,41 +4,45 @@
     <meta charset="UTF-8">
     <meta name="author" content="Edgaras">
     <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-    <title>Edgaro Monkaus Webpage</title>>
+    <title>Awesome Calc.</title>
     <link rel="stylesheet" href="styles.css">
 </head>        
-<body>
-<div id="wrapper">   
-    <div id="container">
-        <div class="output-field">
-            <div id="current_number">Input</div>
-            <div id="result">Result</div>
-        </div>
-        <div>
-            <input type="button" value="1" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input type="button" value="2" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input type="button" value="3" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input type="button" value="+" class="operator-button" onclick="CallAdditionOperand(), playSound2()">
-        </div>
-        <div>
-            <input id="4" type="button" value="4" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input id="5" type="button" value="5" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input id="6" type="button" value="6" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input type="button" value="-" class="operator-button" onclick="CallDeductionOperand(), playSound2()">
-        </div> 
-        <div>
-            <input id="7" type="button" value="7" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input id="8" type="button" value="8" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input id="9" type="button" value="9" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input type="button" value="*" class="operator-button" onclick="CallMultiplicationOperand(), playSound2()">
-        </div>
-        <div>
-            <input id="0" type="button" value="0" class="number-button" onclick="CreateCurrentInput(), playSound()">
-            <input type="button" value="=" class="operator-button2" onclick="CountResult(), playSound3()">
-            <input type="button" value="/" class="operator-button" onclick="CallDivisionOperand(), playSound2()" >
-        </div>
-    </div>
+<body>   
+    <div id="wrapper">
+        <div id="title">Awesome Calc.</div>      
+            <div id="container">
+            <div class="output-field">
+                <div id="current_number">Input</div>
+                <div id="result">Result</div>
+            </div>
+            <div>
+                <input type="button" value="1" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input type="button" value="2" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input type="button" value="3" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input type="button" value="+" class="operator-button" onclick="CallAdditionOperand(), playSound2()">
+            </div>
+            <div>
+                <input id="4" type="button" value="4" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input id="5" type="button" value="5" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input id="6" type="button" value="6" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input type="button" value="-" class="operator-button" onclick="CallDeductionOperand(), playSound2()">
+            </div> 
+            <div>
+                <input id="7" type="button" value="7" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input id="8" type="button" value="8" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input id="9" type="button" value="9" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input type="button" value="*" class="operator-button" onclick="CallMultiplicationOperand(), playSound2()">
+            </div>
+            <div>
+                <input id="0" type="button" value="0" class="number-button" onclick="CreateCurrentInput(), playSound()">
+                <input type="button" value="=" class="operator-button2" onclick="CountResult(), playSound3()">
+                <input type="button" value="/" class="operator-button" onclick="CallDivisionOperand(), playSound2()" >
+            </div>
+        </div>  
+    </div>      
 </div>
+<div id="container2"><h3 color="white">Memo Field: </h3></br></h3></div>
+<div id="player"><audio controls><source src="BackgroundMusic.mp3" type="audio/mp3"></audio></div>  
 <script src="javascript.js"></script>
 </body>
 </html>

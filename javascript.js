@@ -1,4 +1,5 @@
 let current_number_el = document.querySelector('#current_number');
+let memoField = document.querySelector('#container2'); 
 let result_el = document.querySelector('#result');
 let previous_number = 0;
 let current_number = 0;
@@ -16,7 +17,8 @@ let playSound3 = () => new Audio("https://www.soundjay.com/buttons/sounds/button
     current_number == 0 ? current_number += parseInt(input) : current_number += input;    
     console.log("previous_number ", previous_number); 
     console.log("current_number ", current_number);
-    current_number_el.innerText = current_number;    
+    current_number_el.innerText = current_number;
+    memoField.innerText += current_number;
 }
 
 function AddToPreviousNumber() {
@@ -25,6 +27,7 @@ function AddToPreviousNumber() {
     previous_number += parseInt(current_number);
     isNumberFirst = false;
     console.log("previous_number inside AddToPreviousNumber() ", previous_number);
+    //memoField.innerText += ' + '; 
 }
 
 function DeductFromPreviousNumber() {
@@ -36,6 +39,7 @@ function DeductFromPreviousNumber() {
     }
     isNumberFirst = false; 
     console.log("previous_number D() ", previous_number);
+    //memoField.innerText += ' - ';
 }
 
 function MultiplyFromPreviousNumber() {
@@ -47,6 +51,7 @@ function MultiplyFromPreviousNumber() {
     }
     isNumberFirst = false; 
     console.log("previous_number D() ", previous_number);
+    //memoField.innerText += ' * ';
 }
 
 function DivideFromPreviousNumber() {
@@ -58,10 +63,15 @@ function DivideFromPreviousNumber() {
     }
     isNumberFirst = false; 
     console.log("previous_number D() ", previous_number);
+    //memoField.innerText += ' / ';
 }
 
 function ResetCurrentInput() {
     current_number = 0;
+}
+
+function ResetPreviousInput() {
+    previous_number = 0;
 }
 
 function CallAdditionOperand() {
@@ -70,6 +80,7 @@ function CallAdditionOperand() {
     ResetCurrentInput();
     operator='toAdd';
     console.log("+")
+    memoField.innerText += ' + ';    
  }
 
  function CallDeductionOperand() {
@@ -78,6 +89,7 @@ function CallAdditionOperand() {
     ResetCurrentInput();
     operator='toDeduct';
     console.log("-")
+    memoField.innerText += ' - ';
  }
 
  function CallMultiplicationOperand() {
@@ -86,14 +98,16 @@ function CallAdditionOperand() {
     ResetCurrentInput();
     operator='toMultiply';
     console.log("*")
+    memoField.innerText += ' * ';
  }
 
  function CallDivisionOperand() {
-    if (isNumberFirst) operator='toMultiply'; 
+    if (isNumberFirst) operator='toDivide'; 
     DoPreviousOperation();
     ResetCurrentInput();
     operator='toDivide';
     console.log("/")
+    memoField.innerText += ' / ';
  }
 
 function DoPreviousOperation() {
@@ -123,4 +137,15 @@ function CountResult() {
     DoPreviousOperation();
     console.log("result = ", previous_number);
     result_el.innerText = previous_number;
+    memoField.innerText += ' = ';
+    memoField.innerText += previous_number;
+    memoField.innerText += "\n";
+    ResetCurrentInput(); //naujai
+    ResetPreviousInput(); // naujai
+
+    //let memField = [];
+    //memField.push(String(CreateCurrentInput()));
+    //console.log("labas", memField)
+    //memoField.innerText = memField; // memo laukui
+
 }
