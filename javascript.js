@@ -14,12 +14,12 @@ let playSound3 = () => new Audio("https://www.soundjay.com/buttons/sounds/button
  function CreateCurrentInput() {
     let input = event.target.value;
     // concatinates currently inputed numbers
-    current_number == 0 ? current_number += parseInt(input) : current_number += input;    
+    current_number == 0 ? current_number += parseInt(input) : current_number += input;
     current_number_el.innerText = current_number;
-    memoField.innerText += " " + current_number;
 }
 
 function AddToPreviousNumber() {
+    memoField.innerText += " " + current_number;
     previous_number += parseInt(current_number);
     isNumberFirst = false;
 }
@@ -30,6 +30,7 @@ function DeductFromPreviousNumber() {
     } else {
         previous_number -= current_number;
     }
+    memoField.innerText += " " + current_number;
     isNumberFirst = false; 
 }
 
@@ -39,6 +40,7 @@ function MultiplyFromPreviousNumber() {
     } else {
         previous_number *= current_number;
     }
+    memoField.innerText += " " + current_number;
     isNumberFirst = false; 
 }
 
@@ -48,6 +50,7 @@ function DivideFromPreviousNumber() {
     } else {
         previous_number /= current_number;
     }
+    memoField.innerText += " " + current_number;
     isNumberFirst = false; 
 }
 
@@ -63,8 +66,8 @@ function CallAdditionOperand() {
     if (isNumberFirst) operator='toAdd';
     DoPreviousOperation();
     ResetCurrentInput();
-    operator='toAdd';
-    memoField.innerText += ' + ';    
+    operator='toAdd';;
+    memoField.innerText += ' + ';
  }
 
  function CallDeductionOperand() {
@@ -101,18 +104,17 @@ function DoPreviousOperation() {
         ResetCurrentInput();
     }
     else if (operator === 'toMultiply'){
-        MultiplyFromPreviousNumber();    
+        MultiplyFromPreviousNumber();
         ResetCurrentInput();
     }
     else if (operator === 'toDivide'){
-        DivideFromPreviousNumber();    
+        DivideFromPreviousNumber();
         ResetCurrentInput();
     }
 }
 
 function CountResult() {
     DoPreviousOperation();
-    console.log("result = ", previous_number);
     result_el.innerText = previous_number;
     memoField.innerText += ' = ';
     memoField.innerText += " " + previous_number;
