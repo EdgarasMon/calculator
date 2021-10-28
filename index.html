@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Edgaras">
-    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
     <title>Awesome Calc.</title>
     <link rel="stylesheet" href="styles.css">
 </head>        
 <body> 
     <div id="wrapper">
-        <div id="title">Awesome Calc.</div>      
+        <div id="title">Awesome Calc.</div>
+        <div id="player"><audio controls><source src="BackgroundMusic.mp3" type="audio/mp3"></audio></div>      
             <div id="container">
             <div class="output-field">
                 <div id="current_number">Input</div>
@@ -39,14 +39,13 @@
                 <input type="button" value="/" class="operator-button" onclick="CallDivisionOperand(), playSound2()" >
             </div>
         </div>  
-    </div>      
+    </div>  
+    <div id="container2">
+        <h3 color="white">
+            Memo Field: </br> 
+        </h3>
+    </div>    
 </div>
-<div id="container2">
-    <h3 color="white">
-        Memo Field: </br>
-    </h3>
-</div>
-<div id="player"><audio controls><source src="BackgroundMusic.mp3" type="audio/mp3"></audio></div>
 <script src="javascript.js"></script>
 </body>
 </html>
