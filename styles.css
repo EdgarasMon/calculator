@@ -4,56 +4,59 @@
 }
 
  body, .number-button, .operator-button2, .operator-button, .output-field {
-   background-image: url("rickandmorty.jpg");
-   opacity: 0.80;
-   font-family: 'MyWebFont', Fallback, sans-serif;
-   animation: animateBg 10s linear infinite;
-   background-image: radialGradient(0deg,#cf5c5c,#c19b4a,#def2a0,#c6ee4a,#42eca6,#64b3d9,#208ea2,#498ada,#5b73df,#897ed3,#cf5c5c,#c19b4a);
-   background-size: 100% 1100%;
+  background-image: url("rickandmorty.jpg");
+  opacity: 0.8;
+  font-family: 'MyWebFont', Fallback, sans-serif;
+  animation: animateBg 10s linear infinite;
+  background-image: radialGradient(0deg,#cf5c5c,#c19b4a,#def2a0,#c6ee4a,#42eca6,#64b3d9,#208ea2,#498ada,#5b73df,#897ed3,#cf5c5c,#c19b4a);
+  background-size: 100%;
  }
 
  #title {
-  color: whitesmoke;
-  font-size: 60px;
-  text-align:inherit;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
 }
 
  #appName {
-   text-align: center;
+  text-align: center;
  }
 
  #wrapper {
-   position: relative;
-   margin: auto;
+  position: relative;
+  margin: auto;
+  
 }
 
  #container {
+  display: grid;
   top: 330%;
   left: 12%;
-  right: 70%;
-   position: absolute;
-   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(138,252,70,1) 100%);
-   border: 0.25vh solid black;
-   padding: 2vw;
-   border-radius: 15px;
-   animation: animateBg 10s linear infinite;
-   background-image: linear-gradient(0deg,#cf5c5c,#c19b4a,#def2a0,#c6ee4a,#42eca6,#64b3d9,#208ea2,#498ada,#5b73df,#897ed3,#cf5c5c,#c19b4a);
-   background-size: 100% 1100%;
+  position: absolute;
+  font-size: 1rem;
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(138,252,70,1) 100%);
+  border: 0.25vh solid black;
+  padding: 2vw;
+  border-radius: 15px;
+  animation: animateBg 10s linear infinite;
+  background-image: linear-gradient(0deg,#cf5c5c,#c19b4a,#def2a0,#c6ee4a,#42eca6,#64b3d9,#208ea2,#498ada,#5b73df,#897ed3,#cf5c5c,#c19b4a);
+  background-size: 100% 1100%;
  }
 
  #container2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   color: #fff;
-  font-size: 30px;
-  top: 25%;  
+  font-size: 2rem;
+  top: 320%;  
   left: 60%;
   right: 10%;  
   position: absolute;
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(138,252,70,1) 100%);
   border: 0.25vh solid black;
-  padding: 2vw;
+  padding: 1vh;
   border-radius: 15px;
   animation: animateBg 10s linear infinite;
   background-image: linear-gradient(180deg,#cf5c5c,#c19b4a,#def2a0,#c6ee4a,#42eca6,#64b3d9,#208ea2,#498ada,#5b73df,#897ed3,#cf5c5c,#c19b4a);
@@ -61,25 +64,25 @@
 }
 
  p {
-    padding: auto;
-    display: table-cell;
-    border: 0.1vh solid black;
-    text-align: center;
+  padding: auto;
+  display: table-cell;
+  border: 0.1vh solid black;
+  text-align: center;
  }
 
 .result {
-    display: block;
-    height: 20vh;
-    text-align: center;  
+  display: block;
+  height: 20vh;
+  text-align: center;  
  }
 
  #current_number {
    text-align: center;
-   font-size: 50px;
+   font-size: 3rem;
  }
  #result {
    text-align: center;
-   font-size: 50px;
+   font-size: 3rem;
  }
 
 .output-field {
@@ -87,14 +90,15 @@
   border: 0.3vh solid black;
   border-radius: 15px;
   margin-block: 15px;
-
+  display: block;
+  width: 245px
 }
 
 .number-button {
-   color: #fff;
+   color: white;
    min-width: 50px;
    min-height: 50px;
-   font-size: 45px;
+   font-size: 3rem;
    margin: 1px;
    border-radius: 10px;
    font-family: 'MyWebFont', Fallback, sans-serif;
@@ -107,7 +111,7 @@
   color: #fff;
   min-width: 70px;
   min-height: 50px;
-  font-size: 45px;
+  font-size: 3rem;
   font-weight: bold;
   margin: 1px;
   border-radius: 10px;
@@ -118,7 +122,7 @@
   color: #fff;
   min-width: 110px;
   min-height: 50px;
-  font-size: 45px;
+  font-size: 3rem;
   margin: 1px;
   border-radius: 10px;
   animation: animateBg 8s linear infinite;
@@ -128,17 +132,40 @@
 
  #player {
   position: absolute;
- }
+  right: 2%;
+  top: 1500%;
+}
 
- @media screen and (max-width: 600px) { 
-  .number-button, .operator-button, .operator-button2, .output-field, div#current_number, div#result, #container, #container2 {
-    transform: translate(-60%, 17%);
-    min-width: 20px;
-    min-height: 20px;
-    font-size: 20px;
-    border: 0.1vh solid black;
-    border-radius: 5px;
+ @media screen and (max-width: 650px) { 
+  .output-field, #container, #container2, #player, #wrapper {
+    position: relative;
+    justify-content: center;
+    right: 10%;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    width: 320px;    
   }
+}
+
+@media screen and (max-width: 650px) { 
+  div#group_buttons, .number-button, .operator-button, .operator-button2 {
+  display: flex;
+  justify-content: center;
+  min-width: 80px;
+  }
+}
+
+@media screen and (max-width: 650px) { 
+   .operator-button2 {
+  min-width: 150px;
+  }
+}
+
+@media screen and (max-width: 650px) { 
+  div#title {
+ margin: 25px;
+ }
 }
 
  @keyframes animateBg {
