@@ -1,4 +1,4 @@
-# Calculator
+# Calculator 🖩
 
 This one-pager was created, for learning purposes. 
 
